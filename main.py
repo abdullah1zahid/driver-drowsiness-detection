@@ -31,7 +31,7 @@ def calculate_ear(eye_points, landmarks, frame_width, frame_height):
     return ear
 
 
-# تھریش ہولڈ اور کاؤنٹر سیٹنگز
+
 EAR_THRESHOLD = 0.20
 EAR_CONSEC_FRAMES = 20
 closed_frames = 0
@@ -57,11 +57,11 @@ while True:
 
             avg_ear = (left_ear + right_ear) / 2.0
 
-            # لاجک: دونوں آنکھیں بند ہونے پر کاؤنٹر اور الرٹ
+            
             if left_ear < EAR_THRESHOLD and right_ear < EAR_THRESHOLD:
                 closed_frames += 1
                 if closed_frames >= EAR_CONSEC_FRAMES:
-                    # سکرین پر الرٹ اور سپیکر سے بیپ
+                    
                     cv2.putText(frame, "DROWSINESS ALERT!", (50, 100),
                                 cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0, 0, 255), 3)
                     winsound.Beep(1000, 200)
